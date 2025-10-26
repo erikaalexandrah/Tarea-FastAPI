@@ -11,9 +11,6 @@ app.include_router(video.router)
 app.include_router(installation.router)
 app.include_router(usage.router)
 
-# Mount static directory (for videos, images, etc.)
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-
 @app.get("/")
 def root():
     return {"message": "Welcome to the main API"}
